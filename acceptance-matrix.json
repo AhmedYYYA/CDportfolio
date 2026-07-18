@@ -1,0 +1,394 @@
+{
+  "meta": {
+    "product": "Falcon Aviation Command — Capability Portfolio & Lifecycle Control Tower (Demo)",
+    "specVersion": "Master Website Build Prompt v1.0",
+    "buildDate": "2026-07-17",
+    "seed": "FAC-DEMO-2026",
+    "datasetHash": "f68a97db",
+    "artifact": "index.html (384,235 bytes, single file, zero dependencies) — v1.1 design + language QA",
+    "testResult": "34/34 PASS",
+    "categories": {
+      "implemented": "Fully working in the demo and covered by an automated or live in-app check",
+      "documented_limitation": "Delivered in demo form with an inherent static-demo limitation stated in-app and in README",
+      "deferred_phase2": "Out of scope for a static single file; specified for the Phase-2 full-stack build"
+    }
+  },
+  "items": [
+    {
+      "id": "A-01",
+      "section": 2,
+      "item": "Persistent DEMONSTRATION / SYNTHETIC banner on every view (EN+AR)",
+      "category": "implemented",
+      "evidence": "harness: banner text both languages; router injects on all routes incl. login, reports, CSV header"
+    },
+    {
+      "id": "A-02",
+      "section": 2,
+      "item": "Synthetic operational data never mixed with public facts",
+      "category": "implemented",
+      "evidence": "platform pages: three separated sections; facts verbatim with source+retrieval; origin chips everywhere"
+    },
+    {
+      "id": "A-03",
+      "section": 2,
+      "item": "No weapon-loading or sensitive performance data stored",
+      "category": "implemented",
+      "evidence": "SRC-05 note; §11 facts limited to public capability metadata"
+    },
+    {
+      "id": "A-04",
+      "section": 2,
+      "item": "Scenario outputs marked NOT AN APPROVED FORECAST",
+      "category": "implemented",
+      "evidence": "harness: scenarioMark present on scenario runs; also on report frames using model outputs"
+    },
+    {
+      "id": "A-05",
+      "section": 3,
+      "item": "Exact palette, Tahoma/Arial, no external fonts or CDNs",
+      "category": "implemented",
+      "evidence": "styles.css tokens; zero network requests in file"
+    },
+    {
+      "id": "A-06",
+      "section": 3,
+      "item": "en-GB / ar-AE with Latin digits; AED primary, USD toggle at 3.6725",
+      "category": "implemented",
+      "evidence": "fmt layer; Admin USD toggle"
+    },
+    {
+      "id": "A-07",
+      "section": 3,
+      "item": "WCAG 2.2 AA measures",
+      "category": "documented_limitation",
+      "evidence": "focus-visible, contrast-safe palette, aria labels, data-table chart alternatives, reduced-motion; formal audit not run — noted in README"
+    },
+    {
+      "id": "A-08",
+      "section": 4,
+      "item": "15 roles with distinct navigation, dashboards, permissions",
+      "category": "implemented",
+      "evidence": "harness: OEM 3-route restriction; AUD read-only+audit; 230 role×lang renders"
+    },
+    {
+      "id": "A-09",
+      "section": 4,
+      "item": "Denied access page + audit event",
+      "category": "implemented",
+      "evidence": "router guard writes aud_denied; denied route rendered in sweep"
+    },
+    {
+      "id": "A-10",
+      "section": 5,
+      "item": "Stages 0–9 and gates G0–G11 with bilingual descriptors",
+      "category": "implemented",
+      "evidence": "capability board + gate strip; gateDesc_G0..G11 keys in both dictionaries"
+    },
+    {
+      "id": "A-11",
+      "section": 5,
+      "item": "Maker–checker: no self-approval, approver roles only",
+      "category": "implemented",
+      "evidence": "harness: self blocked / non-approver blocked / CDR approves"
+    },
+    {
+      "id": "A-12",
+      "section": 6,
+      "item": "20 capability lines with gaps, RAG, programme links",
+      "category": "implemented",
+      "evidence": "generator CAP-01..20; capability detail page"
+    },
+    {
+      "id": "A-13",
+      "section": 7,
+      "item": "Six-group information architecture as specified",
+      "category": "implemented",
+      "evidence": "NAV constant in router mirrors §7"
+    },
+    {
+      "id": "A-14",
+      "section": 8,
+      "item": "All required pages 8.1–8.21 present and interactive",
+      "category": "implemented",
+      "evidence": "33 routes render in harness sweep"
+    },
+    {
+      "id": "A-15",
+      "section": 8,
+      "item": "KPI provenance flip (formula, inputs, origin, window) on cockpit KPIs",
+      "category": "implemented",
+      "evidence": "kfront/kback component; 12 cockpit KPIs"
+    },
+    {
+      "id": "A-16",
+      "section": 8,
+      "item": "Editable ROP/SS/EOQ calculator in part detail",
+      "category": "implemented",
+      "evidence": "z / lead-time inputs live-recalculate; ROP hand-calc test"
+    },
+    {
+      "id": "A-17",
+      "section": 9,
+      "item": "Domain model relationships navigable (capability↔programme↔gate↔risk; part↔ledger↔pool↔RO↔supplier↔agreement)",
+      "category": "implemented",
+      "evidence": "cross-links on detail pages; generator FK integrity"
+    },
+    {
+      "id": "A-18",
+      "section": 10,
+      "item": "Deterministic dataset from seed FAC-DEMO-2026",
+      "category": "implemented",
+      "evidence": "harness: identical hash f68a97db across independent loads"
+    },
+    {
+      "id": "A-19",
+      "section": 10,
+      "item": "48 named aircraft in dated delivery cohorts across 3 sites",
+      "category": "implemented",
+      "evidence": "asset registry; counts test"
+    },
+    {
+      "id": "A-20",
+      "section": 10,
+      "item": "All minimum record counts met",
+      "category": "implemented",
+      "evidence": "counts test: WO 340, faults 185, downtime 240, parts 500, ledger 6000, RO 52, FSR 30, AGR 12, UPG 8, OBS 25, risks 20, actions 20"
+    },
+    {
+      "id": "A-21",
+      "section": 11,
+      "item": "Public facts verbatim with per-fact source link and retrieval date",
+      "category": "implemented",
+      "evidence": "platform sec-public blocks; SRC register"
+    },
+    {
+      "id": "A-22",
+      "section": 11,
+      "item": "Unverified sources flagged REQUIRES_VALIDATION",
+      "category": "implemented",
+      "evidence": "SRC-04, SRC-06, SRC-08 flagged with red origin chips and notes"
+    },
+    {
+      "id": "A-23",
+      "section": 11,
+      "item": "Fact snapshot currency",
+      "category": "documented_limitation",
+      "evidence": "frozen at 2026-07-16 build retrieval; stated on Sources page and README"
+    },
+    {
+      "id": "A-24",
+      "section": 12,
+      "item": "Ao possessed-hours method incl. scheduled-MX baseline; Ai vs Ao distinction",
+      "category": "implemented",
+      "evidence": "calc.ao; cockpit trend with policy band; rel_aiAoNote"
+    },
+    {
+      "id": "A-25",
+      "section": 12,
+      "item": "Reliability metrics show sample sizes; MTBUR ≤ MTBF explanation",
+      "category": "implemented",
+      "evidence": "reliability table small-sample flags; mtburNote"
+    },
+    {
+      "id": "A-26",
+      "section": 12,
+      "item": "Designed NH90 availability story with Mar-2025 outlier",
+      "category": "implemented",
+      "evidence": "generator lambda overrides; cockpit outlier marker; Ao NH90 67.9%, dip 0.55"
+    },
+    {
+      "id": "A-27",
+      "section": 13,
+      "item": "Stock ledger identity on every row",
+      "category": "implemented",
+      "evidence": "harness + in-app assurance: 6,000/6,000"
+    },
+    {
+      "id": "A-28",
+      "section": 13,
+      "item": "Repairable 7-state conservation",
+      "category": "implemented",
+      "evidence": "harness + live check icons per pool row: 120/120"
+    },
+    {
+      "id": "A-29",
+      "section": 13,
+      "item": "Forecast backtest (MA3 vs naïve) with bias and MASE; MAPE restricted",
+      "category": "implemented",
+      "evidence": "forecastEval; MASE 0.60 on probe part; maseNote"
+    },
+    {
+      "id": "A-30",
+      "section": 14,
+      "item": "OEM external portal sees only releasable cases",
+      "category": "implemented",
+      "evidence": "harness: FSR-4001 visible, FSR-4015 hidden"
+    },
+    {
+      "id": "A-31",
+      "section": 15,
+      "item": "EVM with CPI/SPI, three EACs, validity guards",
+      "category": "implemented",
+      "evidence": "UPG-01 invalid at AC=0; UPG-03 CPI 0.85 with EAC1 > BAC; SPI>0 guard"
+    },
+    {
+      "id": "A-32",
+      "section": 16,
+      "item": "Obsolescence timeline with exactly 2 decision-pending shortages ≤18 months",
+      "category": "implemented",
+      "evidence": "OBS-13 / OBS-22; wired to R-05 and G10; health subscore"
+    },
+    {
+      "id": "A-33",
+      "section": 17,
+      "item": "Retirement schedule with single terminal-year residual credit",
+      "category": "implemented",
+      "evidence": "harness residual test; retirement page note"
+    },
+    {
+      "id": "A-34",
+      "section": 18,
+      "item": "Budget / Synthetic Actual / Forecast side-by-side, never summed",
+      "category": "implemented",
+      "evidence": "structural month-window test; measuresNote on cost views"
+    },
+    {
+      "id": "A-35",
+      "section": 18,
+      "item": "CPFH inclusion matrix, direct vs burdened, N/A guard at zero FH",
+      "category": "implemented",
+      "evidence": "13,955 vs 24,398 AED/FH; guard test"
+    },
+    {
+      "id": "A-36",
+      "section": 18,
+      "item": "30-yr LCC: PV, EUAC, real terms, Fisher-consistent rates",
+      "category": "implemented",
+      "evidence": "PV=Σ at r=0; EUAC=PV·A(r,N); Fisher 5.266%"
+    },
+    {
+      "id": "A-37",
+      "section": 18,
+      "item": "Deterministic 2,000-run Monte-Carlo with P50/P80 and tornado",
+      "category": "implemented",
+      "evidence": "seeded label stream; P50 5,935M / P80 6,181M; re-run identically in-browser"
+    },
+    {
+      "id": "A-38",
+      "section": 19,
+      "item": "17 scenarios with declared coefficient set and not-modelled lists",
+      "category": "implemented",
+      "evidence": "SCN_COEF v1.0 shown per run; nm_* lists rendered"
+    },
+    {
+      "id": "A-39",
+      "section": 19,
+      "item": "Immutable saved scenario runs with snapshot hash",
+      "category": "implemented",
+      "evidence": "saved-runs table (scenario, time, role, hash); no edit path"
+    },
+    {
+      "id": "A-40",
+      "section": 20,
+      "item": "Standards register STD-01..12 with demo-use notes",
+      "category": "implemented",
+      "evidence": "Sources page frameworks table"
+    },
+    {
+      "id": "A-41",
+      "section": 21,
+      "item": "Every chart has an accessible data-table alternative",
+      "category": "implemented",
+      "evidence": "chartWrap toggle on all SVG figures"
+    },
+    {
+      "id": "A-42",
+      "section": 21,
+      "item": "15 print frames stamped banner/seed/hash/role/timestamp + watermark",
+      "category": "implemented",
+      "evidence": "reportModal + @media print watermark"
+    },
+    {
+      "id": "A-43",
+      "section": 22,
+      "item": "Full bilingual parity and RTL mirroring",
+      "category": "implemented",
+      "evidence": "1,208=1,208 keys; zero markers across 230+ renders; logical CSS properties; disclaimer modal verified in both languages"
+    },
+    {
+      "id": "A-44",
+      "section": 23,
+      "item": "Default full-stack architecture (framework + database)",
+      "category": "deferred_phase2",
+      "evidence": "offline environment; compliant single-file alternative delivered; Phase-2 path in README §7"
+    },
+    {
+      "id": "A-45",
+      "section": 24,
+      "item": "Role guards, maker–checker, audit incl. denied access",
+      "category": "documented_limitation",
+      "evidence": "fully demonstrated client-side; server-side enforcement is Phase 2 (stated in-app and README)"
+    },
+    {
+      "id": "A-46",
+      "section": 24,
+      "item": "Real authentication / SSO",
+      "category": "deferred_phase2",
+      "evidence": "demo role picker by design; login page states fictional-role model"
+    },
+    {
+      "id": "A-47",
+      "section": 24,
+      "item": "CSV formula-injection neutralization + governance header",
+      "category": "implemented",
+      "evidence": "harness: = + − @ neutralized; header with banner/filters/seed/hash/origin legend/timestamp"
+    },
+    {
+      "id": "A-48",
+      "section": 25,
+      "item": "CSV export on all tables",
+      "category": "implemented",
+      "evidence": "exportCsv wired via table toolbar"
+    },
+    {
+      "id": "A-49",
+      "section": 25,
+      "item": "File imports and mocked ERP/MRO/PLM connector screens",
+      "category": "deferred_phase2",
+      "evidence": "integration posture documented on Admin page; no live/mock connectors in static demo"
+    },
+    {
+      "id": "A-50",
+      "section": 26,
+      "item": "Origin mix, freshness, 10 reconciliation rules; missing='—' vs true zero",
+      "category": "implemented",
+      "evidence": "Quality page; DQ-06/07/08 statuses; q_missingNote"
+    },
+    {
+      "id": "A-51",
+      "section": 27,
+      "item": "Automated test suite on the exact shipped artifact",
+      "category": "implemented",
+      "evidence": "external harness 34/34; in-app Assurance page re-runs 12 checks live"
+    },
+    {
+      "id": "A-52",
+      "section": 28,
+      "item": "Documentation set",
+      "category": "implemented",
+      "evidence": "README.md (bilingual), IMPLEMENTATION_STATUS.md, acceptance-matrix.json, in-app About/Limitations"
+    },
+    {
+      "id": "A-53",
+      "section": 30,
+      "item": "Definition of done — no failing checks, all marks present, deterministic rebuild",
+      "category": "implemented",
+      "evidence": "this matrix + harness output"
+    }
+  ],
+  "summary": {
+    "implemented": 47,
+    "documented_limitation": 3,
+    "deferred_phase2": 3
+  }
+}
